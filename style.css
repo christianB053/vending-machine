@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap');
+
+:root {
+    --main-color: #6327FE;
+    --sub-color: #EAE8FE;
+    --white-color: #fff;
+    --font-color: #333333;
+    --gray-color: #BDBDBD;
+    --box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    background-color: var(--sub-color);
+}
+
+.wrapper {
+    max-width: 748px;
+    margin: 0 auto;
+}
+
+.vending-header {
+    text-align: center;
+}
+
+.vending-header img {
+    width: 436px;
+}
+
+.vending-cont {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 43px;
+}
+
+.vending-column {
+    width: 360px;
+    background-color: var(--white-color);
+    flex-shrink: 0;
+}
+
+.vending-column:first-child {
+    padding: 31px 25px 28px;
+}
+
+.vending-cola-lists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    text-align: center;
+}
+
+.vending-btn {
+    padding: 11px 11px 9px;
+    cursor: pointer;
+    background-color: var(--white-color);
+    border: none;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.vending-btn:hover {
+    outline: 3px solid var(--main-color);
+    box-shadow: none;
+}
+
+.vending-btn img {
+    width: 36px;
+    height: 65px;
+    padding-bottom: 5px;
+    vertical-align: top;
+}
+
+.purchase-cont {
+    display: grid;
+    grid-template-columns: 200px 94px;
+    grid-template-rows: repeat(2, 33px) 106px;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.vending-tit {
+    font-size: 9px;
+    line-height: 13px;
+    color: var(--font-color);
+}
+
+.vending-money {
+    display: block;
+    font-size: 12px;
+    background: var(--main-color);
+    border-radius: 50px;
+    padding: 4px 15px;
+    color: var(--white-color);
+    margin-top: 4px;
+}
+
+.vending-cola-item:nth-child(2) .vending-btn {
+    position: relative;
+}
+
+.vending-cola-item:nth-child(2) .vending-btn::before {
+    content: " ";
+    position: absolute;
+    inset: 0;
+    background-image: url(images/soldout-black.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.vending-cola-item:nth-child(2) .vending-btn::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 57px;
+    height: 44px;
+    background-image: url(images/soldout.png);
+    background-size: 57px 44px;
+}
+
+.money {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--sub-color);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.balance {
+    padding: 6px 10px 7px;
+}
+
+.change-btn,
+.deposit-btn {
+    background-color: var(--white-color);
+    border-radius: 5px;
+    border: none;
+    box-shadow: var(--box-shadow);
+    font-size: 13px;
+}
+
+.deposit-inp {
+    color: var(--gray-color);
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.deposit-inp::placeholder {
+    font-size: 13px;
+    color: var(--gray-color);
+}
+
+.lists {
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    padding: 12px;
+    background-color: var(--sub-color);
+    overflow-y: scroll;
+}
+
+.lists::-webkit-scrollbar {
+    width: 12px;
+}
+
+.lists::-webkit-scrollbar-thumb {
+    background-color: var(--white-color);
+    border-radius: 50px;
+    background-clip: padding-box;
+    border: 4px solid transparent;
+}
+
+.lists::-webkit-scrollbar-track {
+    border-radius: 50px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 8px 7px 10px;
+    background-color: var(--white-color);
+    border-radius: 5px;
+}
+
+.list-cola {
+    display: flex;
+    align-items: center;
+}
+
+.list-item img {
+    width: 18px;
+    height: 33px;
+    margin-right: 10px;
+}
+
+.list-tit {
+    color: var(--font-color);
+    font-size: 9px;
+}
+
+.list-count {
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid var(--gray-color);
+    border-radius: 5px;
+    padding: 4px 11px 6px;
+}
+
+.list-item + .list-item {
+    margin-top: 6px
+}
+
+.purchase-btn {
+    background-color: var(--main-color);
+    color: var(--white-color);
+    box-shadow: var(--box-shadow);
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.vending-column:nth-child(2) {
+    background-color: var(--sub-color);
+}
+
+.user-money {
+    padding: 10px 27px;
+    background-color: var(--white-color);
+}
+
+.have-money {
+    padding: 10px;
+}
+
+.purchase-item {
+    background-color: var(--white-color);
+    padding: 29px 27px;
+    margin-top: 22px;
+}
+
+.purchase-item h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.purchase-lists {
+    height: 364px;
+}
+
+.total-money {
+    font-size: 12px;
+    line-height: 17px;
+    margin-top: 8px;
+    text-align: right;
+}
+
+@media screen and (max-width: 720px) {
+    .vending-header img {
+        width: 188px;
+        height: 88px;
+    }
+    .purchase-item {
+        margin-top: 0px;
+    }
+}
